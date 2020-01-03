@@ -9,10 +9,10 @@ message passing between web pages using browser cookies.
 HOW TO USE
 ==========
 
-1. Simple include the plugin `cookieMsgs()` at the top of your main `routes`
-   or primary `router`. This will enable the plugin for the whole web site.
+1. Include the plugin ``cookieMsgs()`` at the top of your main ``routes``
+   or primary ``router``. This will enable the plugin for the whole web site.
 
-2. Use the object variable created to access the `say` and related procedures.
+2. Use the object variable created to access the ``say`` and related procedures.
 
 3. Add the display of your messages to each web page should such a message
    be ready. (Again, using the object variable created.)
@@ -103,10 +103,10 @@ new messages are stored in the ``fromRoute`` array.
 
 When the route ends, if it terminates with:
 
-**resp**, then it is assumed that your template displayed the routes and the
+*  **resp**, then it is assumed that your template displayed the routes and the
 plugin empties the contents of the "messages" cookie.
 
-**redirect**, then any messages found in either ``fromRequest`` or ``fromRoute``
+*  **redirect**, then any messages found in either ``fromRequest`` or ``fromRoute``
 are encoded by the plugin into a new "messages" cookie for the next page to find.
 
 

@@ -13,10 +13,10 @@ import
 ## HOW TO USE
 ## ==========
 ##
-## 1. Simple include the plugin `cookieMsgs()` at the top of your main `routes`
-##    or primary `router`. This will enable the plugin for the whole web site.
+## 1. Include the plugin ``cookieMsgs()`` at the top of your main ``routes``
+##    or primary ``router``. This will enable the plugin for the whole web site.
 ##
-## 2. Use the object variable created to access the `say` and related procedures.
+## 2. Use the object variable created to access the ``say`` and related procedures.
 ##
 ## 3. Add the display of your messages to each web page should such a message
 ##    be ready. (Again, using the object variable created.)
@@ -107,10 +107,10 @@ import
 ##
 ## When the route ends, if it terminates with:
 ##
-## **resp**, then it is assumed that your template displayed the routes and the
+## *  **resp**, then it is assumed that your template displayed the routes and the
 ## plugin empties the contents of the "messages" cookie.
 ##
-## **redirect**, then any messages found in either ``fromRequest`` or ``fromRoute``
+## *  **redirect**, then any messages found in either ``fromRequest`` or ``fromRoute``
 ## are encoded by the plugin into a new "messages" cookie for the next page to find.
 
 type
@@ -142,16 +142,16 @@ proc decode_cookie(cookie: string): seq[CookieMsg] =
 
 
 proc cookieMsgs_before*(request: Request, response: var ResponseData): CookieObj =
-  ## This is ``before`` portion of the plugin. You are not expected to ever run
-  ## this procedure except as part of the ``plugin`` in the ``routes`` or ``router``.
+  ## This is ``before`` portion of the plugin. Do not run
+  ## this procedure, it is used by the plugin itself.
   if request.cookies.hasKey("messages"):
     result.cookie = request.cookies["messages"]
     result.fromRequest = decode_cookie(result.cookie)
 
 
 proc cookieMsgs_after*(request: Request, response: var ResponseData, data: CookieObj) =
-  ## This is ``after`` portion of the plugin. You are not expected to ever run
-  ## this procedure except as part of the ``plugin`` in the ``routes`` or ``router``.
+  ## This is ``after`` portion of the plugin. Do not run
+  ## this procedure, it is used by the plugin itself.
   case response.action:
   of TCActionSend:
     let allMsgs = %*(data.fromRoute)

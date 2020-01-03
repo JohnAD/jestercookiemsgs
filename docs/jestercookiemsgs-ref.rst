@@ -59,8 +59,8 @@ cookieMsgs_after
 
     source line: `152 <../src/jestercookiemsgs.nim#L152>`__
 
-    This is ``after`` portion of the plugin. You are not expected to ever run
-    this procedure except as part of the ``plugin`` in the ``routes`` or ``router``.
+    This is ``after`` portion of the plugin. Do not run
+    this procedure, it is used by the plugin itself.
 
 
 .. _cookieMsgs_before.p:
@@ -73,8 +73,8 @@ cookieMsgs_before
 
     source line: `144 <../src/jestercookiemsgs.nim#L144>`__
 
-    This is ``before`` portion of the plugin. You are not expected to ever run
-    this procedure except as part of the ``plugin`` in the ``routes`` or ``router``.
+    This is ``before`` portion of the plugin. Do not run
+    this procedure, it is used by the plugin itself.
 
 
 .. _htmlDivs.p:
