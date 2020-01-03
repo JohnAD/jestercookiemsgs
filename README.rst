@@ -116,10 +116,10 @@ new messages are stored in the ``fromRoute`` array.
 When the route ends, if it terminates with:
 
 *  **resp**, then it is assumed that your template displayed the routes and the
-plugin empties the contents of the "messages" cookie.
+   plugin empties the contents of the "messages" cookie.
 
 *  **redirect**, then any messages found in either ``fromRequest`` or ``fromRoute``
-are encoded by the plugin into a new "messages" cookie for the next page to find.
+   are encoded by the plugin into a new "messages" cookie for the next page to find.
 
 
 
