@@ -49,34 +49,6 @@ Procs, Methods, Iterators
 =========================
 
 
-.. _cookieMsgs_after.p:
-cookieMsgs_after
----------------------------------------------------------
-
-    .. code:: nim
-
-        proc cookieMsgs_after*(request: Request, response: var ResponseData, data: CookieObj) =
-
-    source line: `152 <../src/jestercookiemsgs.nim#L152>`__
-
-    This is ``after`` portion of the plugin. Do not run
-    this procedure, it is used by the plugin itself.
-
-
-.. _cookieMsgs_before.p:
-cookieMsgs_before
----------------------------------------------------------
-
-    .. code:: nim
-
-        proc cookieMsgs_before*(request: Request, response: var ResponseData): CookieObj =
-
-    source line: `144 <../src/jestercookiemsgs.nim#L144>`__
-
-    This is ``before`` portion of the plugin. Do not run
-    this procedure, it is used by the plugin itself.
-
-
 .. _htmlDivs.p:
 htmlDivs
 ---------------------------------------------------------
@@ -153,6 +125,7 @@ Table Of Contents
 =================
 
 1. `Introduction to jestercookiemsgs <https://github.com/JohnAD/jestercookiemsgs>`__
-2. Appendices
+2. `plugin Reference <plugin-ref.rst>`__
+3. Appendices
 
     A. `jestercookiemsgs Reference <jestercookiemsgs-ref.rst>`__

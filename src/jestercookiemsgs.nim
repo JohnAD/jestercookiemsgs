@@ -6,7 +6,7 @@ import json
 import
   jester
 
-## This is a plugin for the nim 
+## This is a plugin for the nim web
 ## framework `Jester <https://github.com/dom96/jester>`__. It enables easy
 ## message passing between web pages using browser cookies.
 ##
@@ -110,7 +110,7 @@ import
 ## *  **resp**, then it is assumed that your template displayed the routes and the
 ##    plugin empties the contents of the "messages" cookie.
 ##
-## *  **redirect**, then any messages found in either ``fromRequest`` or ``fromRoute``
+## *  **redirect**, then all messages found in both ``fromRequest`` and ``fromRoute``
 ##    are encoded by the plugin into a new "messages" cookie for the next page to find.
 
 type
@@ -141,17 +141,17 @@ proc decode_cookie(cookie: string): seq[CookieMsg] =
     echo "cookieMsgs ERROR: could not interpret $1".format(cookie)
 
 
-proc cookieMsgs_before*(request: Request, response: var ResponseData): CookieObj =
-  ## This is ``before`` portion of the plugin. Do not run
-  ## this procedure, it is used by the plugin itself.
+proc cookieMsgs_before*(request: Request, response: var ResponseData): CookieObj =  #SKIP!
+  # This is the "before" portion of the plugin. Do not run
+  # this procedure directly, it is used by the plugin itself.
   if request.cookies.hasKey("messages"):
     result.cookie = request.cookies["messages"]
     result.fromRequest = decode_cookie(result.cookie)
 
 
-proc cookieMsgs_after*(request: Request, response: var ResponseData, data: CookieObj) =
-  ## This is ``after`` portion of the plugin. Do not run
-  ## this procedure, it is used by the plugin itself.
+proc cookieMsgs_after*(request: Request, response: var ResponseData, data: CookieObj) = #SKIP!
+  # This is the "after" portion of the plugin. Do not run
+  # this procedure directly, it is used by the plugin itself.
   case response.action:
   of TCActionSend:
     let allMsgs = %*(data.fromRoute)

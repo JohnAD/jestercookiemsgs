@@ -14,7 +14,7 @@ ver 1.0.0
    :alt: repo.support
    :target: https://repo.support/gh/JohnAD/jestercookiemsgs
 
-This is a plugin for the nim
+This is a plugin for the nim web
 framework `Jester <https://github.com/dom96/jester>`__. It enables easy
 message passing between web pages using browser cookies.
 
@@ -118,7 +118,7 @@ When the route ends, if it terminates with:
 *  **resp**, then it is assumed that your template displayed the routes and the
    plugin empties the contents of the "messages" cookie.
 
-*  **redirect**, then any messages found in either ``fromRequest`` or ``fromRoute``
+*  **redirect**, then all messages found in both ``fromRequest`` and ``fromRoute``
    are encoded by the plugin into a new "messages" cookie for the next page to find.
 
 
@@ -127,6 +127,7 @@ Table Of Contents
 =================
 
 1. `Introduction to jestercookiemsgs <https://github.com/JohnAD/jestercookiemsgs>`__
-2. Appendices
+2. `plugin Reference <https://github.com/JohnAD/jestercookiemsgs/blob/master/docs/plugin-ref.rst>`__
+3. Appendices
 
     A. `jestercookiemsgs Reference <https://github.com/JohnAD/jestercookiemsgs/blob/master/docs/jestercookiemsgs-ref.rst>`__
