@@ -57,7 +57,7 @@ htmlDivs
 
         proc htmlDivs*(data: CookieObj): string =
 
-    source line: `201 <../src/jestercookiemsgs.nim#L201>`__
+    source line: `223 <../src/jestercookiemsgs.nim#L223>`__
 
     Generate an html string containing the message(s), each in contained
     in separate div in the form of:
@@ -76,7 +76,7 @@ htmlListItems
 
         proc htmlListItems*(data: CookieObj): string =
 
-    source line: `214 <../src/jestercookiemsgs.nim#L214>`__
+    source line: `236 <../src/jestercookiemsgs.nim#L236>`__
 
     Generate an html string containing the message(s), each in contained
     in separate list item in the form of:
@@ -97,7 +97,7 @@ say
 
         proc say*(data: var CookieObj, judgement: string, content: string) =
 
-    source line: `166 <../src/jestercookiemsgs.nim#L166>`__
+    source line: `187 <../src/jestercookiemsgs.nim#L187>`__
 
     This is the means of giving the plugin a messages.
     
@@ -125,7 +125,6 @@ Table Of Contents
 =================
 
 1. `Introduction to jestercookiemsgs <https://github.com/JohnAD/jestercookiemsgs>`__
-2. `plugin Reference <plugin-ref.rst>`__
-3. Appendices
+2. Appendices
 
     A. `jestercookiemsgs Reference <jestercookiemsgs-ref.rst>`__

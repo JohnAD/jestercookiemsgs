@@ -120,6 +120,27 @@ When the route ends, if it terminates with:
 
 *  **redirect**, then all messages found in both ``fromRequest`` and ``fromRoute``
    are encoded by the plugin into a new "messages" cookie for the next page to find.
+This is the psuedo-procedure to invoke to enable the library plugin.
+
+Once placed on the main router or ``routes``, the plugin is active on
+all page routes.
+
+It creates a new object variable that is available to all routes including
+any ``extend``-ed subrouters.
+
+.. code:: nim
+
+    routes:
+      plugin cm <- cookieMsgs()
+      get "/":
+        cm.say("info", "AAA")
+        redirect "/hello"
+      get "/hello"
+        cm.say("warning", "BBB")
+        resp "hello. msg: " & cm.allMessages[0].c & cm.allMessages[1].c
+        # when from /, will see: "hello. msg: AAABBB"
+        # when direct, will see: "hello. msg: BBB"
+
 
 
 
@@ -127,7 +148,6 @@ Table Of Contents
 =================
 
 1. `Introduction to jestercookiemsgs <https://github.com/JohnAD/jestercookiemsgs>`__
-2. `plugin Reference <https://github.com/JohnAD/jestercookiemsgs/blob/master/docs/plugin-ref.rst>`__
-3. Appendices
+2. Appendices
 
     A. `jestercookiemsgs Reference <https://github.com/JohnAD/jestercookiemsgs/blob/master/docs/jestercookiemsgs-ref.rst>`__
