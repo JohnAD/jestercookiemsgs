@@ -141,7 +141,7 @@ proc decode_cookie(cookie: string): seq[CookieMsg] =
     echo "cookieMsgs ERROR: could not interpret $1".format(cookie)
 
 
-proc cookieMsgs*(request: Request, response: var ResponseData): CookieObj =  #SKIP!
+proc cookieMsgs*(request: Request, response: var ResponseData): CookieObj =
   ## This is the psuedo-procedure to invoke to enable the library plugin.
   ## 
   ## Once placed on the main router or ``routes``, the plugin is active on
