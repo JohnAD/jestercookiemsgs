@@ -1,6 +1,6 @@
 Introduction to jestercookiemsgs
 ==============================================================================
-ver 1.0.0
+ver 1.0.1
 
 This is a plugin for the nim web
 framework `Jester <https://github.com/dom96/jester>`__. It enables easy

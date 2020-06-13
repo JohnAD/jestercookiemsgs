@@ -1,10 +1,11 @@
-import times
-import base64
-import strutils
-import json
+import
+  times,
+  base64,
+  strutils,
+  json
 
 import
-  jester
+  jesterwithplugins
 
 ## This is a plugin for the nim web
 ## framework `Jester <https://github.com/dom96/jester>`__. It enables easy
@@ -246,3 +247,14 @@ proc htmlListItems*(data: CookieObj): string =
   result = ""
   for msg in data.allMessages():
     result &= "<li><span class=\"$1\">$2</span></li>\n".format(msg.j, msg.c)
+
+proc toJson*(data: CookieObj): JsonNode =
+  ## Generate JSON array of objects where each object has one message.
+  ##
+  ## Specifically, each object has a "judgement" and "text" field.
+  result = newJArray()
+  for msg in data.allMessages():
+    var jobject = newJObject()
+    jobject["judgement"] = newJString(msg.j)
+    jobject["text"] = newJString(msg.c)
+    result.add jobject

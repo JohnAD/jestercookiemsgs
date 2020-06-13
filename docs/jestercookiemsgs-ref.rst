@@ -21,7 +21,7 @@ CookieMsg
           c*: string   # c = content; abbreviated to save json cookie space
 
 
-    source line: `117 <../src/jestercookiemsgs.nim#L117>`__
+    source line: `118 <../src/jestercookiemsgs.nim#L118>`__
 
 
 
@@ -37,7 +37,7 @@ CookieObj
           fromRoute*: seq[CookieMsg]
 
 
-    source line: `120 <../src/jestercookiemsgs.nim#L120>`__
+    source line: `121 <../src/jestercookiemsgs.nim#L121>`__
 
 
 
@@ -57,7 +57,7 @@ cookieMsgs
 
         proc cookieMsgs*(request: Request, response: var ResponseData): CookieObj =
 
-    source line: `144 <../src/jestercookiemsgs.nim#L144>`__
+    source line: `145 <../src/jestercookiemsgs.nim#L145>`__
 
     This is the psuedo-procedure to invoke to enable the library plugin.
     
@@ -90,7 +90,7 @@ htmlDivs
 
         proc htmlDivs*(data: CookieObj): string =
 
-    source line: `223 <../src/jestercookiemsgs.nim#L223>`__
+    source line: `224 <../src/jestercookiemsgs.nim#L224>`__
 
     Generate an html string containing the message(s), each in contained
     in separate div in the form of:
@@ -109,7 +109,7 @@ htmlListItems
 
         proc htmlListItems*(data: CookieObj): string =
 
-    source line: `236 <../src/jestercookiemsgs.nim#L236>`__
+    source line: `237 <../src/jestercookiemsgs.nim#L237>`__
 
     Generate an html string containing the message(s), each in contained
     in separate list item in the form of:
@@ -130,7 +130,7 @@ say
 
         proc say*(data: var CookieObj, judgement: string, content: string) =
 
-    source line: `187 <../src/jestercookiemsgs.nim#L187>`__
+    source line: `188 <../src/jestercookiemsgs.nim#L188>`__
 
     This is the means of giving the plugin a messages.
     
@@ -147,6 +147,21 @@ say
     
     The ``content`` string is the text message for display on the next page. It should
     support any legitimate UTF-8 string.
+
+
+.. _toJson.p:
+toJson
+---------------------------------------------------------
+
+    .. code:: nim
+
+        proc toJson*(data: CookieObj): JsonNode =
+
+    source line: `251 <../src/jestercookiemsgs.nim#L251>`__
+
+    Generate JSON array of objects where each object has one message.
+    
+    Specifically, each object has a "judgement" and "text" field.
 
 
 
